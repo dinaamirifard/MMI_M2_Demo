@@ -8,6 +8,13 @@ function sum(arr) {
     }
     return res;
 }
+function multiply(arr) {
+    let res = 1;
+    for (let i = 0; i < arr.length; i++) {
+        res *= arr[i];
+    }
+    return res;
+}
 
 describe('#sum()', function () {
 
@@ -21,4 +28,16 @@ describe('#sum()', function () {
         expect(sum([1, 2, 3, 4, 5])).to.equal(15);
     })
 
+});
+
+describe('#multiply()', function () {
+
+    //  if needed logic before each test run
+    beforeEach(function () {
+
+    })
+
+    it('should multiply numbers', function () {
+        expect(multiply([1, 2, 3, 4, 5])).to.equal(120);
+    })
 });

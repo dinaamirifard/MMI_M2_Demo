@@ -1,31 +1,32 @@
-exports.celsiusToFahrenheit = function (x){
- return celsius*(9/5)+10
-}
 
-exports.fahrenheitToCelcius = function (fahrenheit){
- if (true) {
-    return ((fahrenheit-32)/(5/9))
- }   
-}
+exports.celsiusToFahrenheit = function (celsius) {
+    return (celsius * 9 / 5) + 32;
+};
 
-exports.getGreetingDependOnTime =  function (myDate) {
-    let timeBegin = '06:00';
-    let timeEnd = '22:00';
-    const dateBegin = new Date('2020-01-01 ' + timeBegin);
-    const dateEnd = new Date('2020-01-01 ' + timeEnd);
-    const dateCurrent = new Date('2020-01-01 ' + myDate.getHours() + ":" + myDate.getMinutes());
+exports.fahrenheitToCelsius = function (fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+};
 
-    if (dateBegin.getTime() < dateCurrent.getTime()) {
-        if (dateCurrent.getTime() >= dateEnd.getTime()) {
+exports.getGreetingDependOnTime = function (myDate) {
+    const hour = myDate.getHours();
 
-            return "Guten Morgen"
-        }
-        else {
-            return "Guten Abend"
-        }
+    if (hour >= 6 && hour < 12) {
+        return "Guten Morgen";
+    } else if (hour >= 12 && hour < 18) {
+        return "Guten Tag";
+    } else if (hour >= 18 && hour < 22) {
+        return "Guten Abend";
     } else {
-        newVariable = dateCurrent.getTime()
-        console.log("For debugging: ") + dateBegin.getTime() + " " + dateCurrent.getTime() + " " + dateEnd.getTime()
-        return "Guten Morgen"
+        return "Gute Nacht";
     }
-}
+};
+
+
+exports.increaseTemperature = function (temperature) {
+    return temperature + 1;
+};
+
+exports.decreaseTemperature = function (temperature) {
+    return temperature - 1;
+};
+

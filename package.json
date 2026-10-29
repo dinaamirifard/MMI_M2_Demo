@@ -1,20 +1,28 @@
 {
-  "name": "Demo_Project_for_MMI",
+  "name": "demo_project_for_mmi",
   "version": "1.0.0",
   "description": "Project to apply theoretical knowledge",
+  "keywords": [],
+  "homepage": "https://github.com/moniSt13/MMI_WS23_24#readme",
+  "bugs": {
+    "url": "https://github.com/moniSt13/MMI_WS23_24/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moniSt13/MMI_WS23_24.git"
+  },
+  "license": "ISC",
+  "author": "Dina Amirifard",
+  "type": "commonjs",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "mocha tests/*.js --exit",
     "test_with_codeCoverage": "nyc --reporter=text mocha tests/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/moniSt13/MMI_WS23_24.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.2",
     "chai": "^4.3.6",
