@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const apiTemperature = require('../public/js/auxiliaryAPI')
+const assert = require("node:assert/strict");
 
 //TODO Unit Tests to implement
 
@@ -97,5 +98,17 @@ describe("decreaseTemperature()", function () {
 
     it('should decrease negative temperature', function () {
         expect(apiTemperature.decreaseTemperature(-5)).to.equal(-6);
+    });
+});
+describe("getNextLevel()", function () {
+    it("should cycle through levels 0 to 3", function () {
+        let level = 0;
+
+        const expectedLevels = [1, 2, 3, 0, 1];
+
+        expectedLevels.forEach(expected => {
+            level = apiTemperature.getNextLevel(level);
+            expect(level).to.equal(expected);
+        });
     });
 });

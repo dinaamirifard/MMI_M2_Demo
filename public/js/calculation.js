@@ -67,30 +67,17 @@ getGreetingDependOnTime = function (myDate) {
 
 
 function increaseTemperature() {
-    temperature--;
+    temperature = apiTemperature.increaseTemperature(temperature);
     updateDisplay();
 }
 
 function decreaseTemperature() {
-    temperature++;
+    temperature--;
     updateDisplay();
 }
 
 function levelChange() {
-    switch (level) {
-        case 0:
-            level = 1;
-            break;
-        case 1:
-            level += 1;
-            break;
-        case 2:
-            level++;
-            break;
-        default:
-            level -= 3;
-            break;
-    }
+    level = (level + 1) % 4;
     updateDisplay();
 }
 

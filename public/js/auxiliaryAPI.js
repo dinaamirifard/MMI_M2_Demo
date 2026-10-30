@@ -30,3 +30,6 @@ exports.decreaseTemperature = function (temperature) {
     return temperature - 1;
 };
 
+exports.getNextLevel = function (level) {
+    return (level + 1) % 4;
+};
